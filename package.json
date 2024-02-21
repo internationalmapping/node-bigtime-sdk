@@ -1,5 +1,8 @@
 {
-  "author": "John Goldsmith <johngoldsm1@gmail.com>",
+  "authors": [
+    "John Goldsmith <johngoldsm1@gmail.com>",
+    "Mikael Ems <mems@internationalmapping.com>"
+  ],
   "bugs": {
     "url": "https://github.com/john-goldsmith/bigtime-sdk/issues"
   },
@@ -25,12 +28,14 @@
     "sinon-chai": "3.0.0"
   },
   "engines": {
-    "node": "9.6.x",
-    "npm": "5.6.x"
+    "node": ">=17.5.x",
+    "npm": ">=8.4.1"
   },
   "license": "ISC",
   "main": "./index.js",
-  "name": "bigtime-sdk",
+  "types": "./types/index.d.ts",
+  "type":"commonjs",
+  "name": "@imaps/bigtime-sdk",
   "repository": {
     "type": "git",
     "url": "https://github.com/john-goldsmith/bigtime-sdk.git"
@@ -42,5 +47,5 @@
     "test": "$(npm bin)/nyc mocha --recursive --require ./test/helper.js && $(npm bin)/nyc report --reporter=lcov && echo 'Open ./coverage/lcov-report/index.html in your browser'",
     "test:coveralls": "cat ./coverage/lcov.info | $(npm bin)/coveralls"
   },
-  "version": "0.11.0"
+  "version": "0.12.0"
 }

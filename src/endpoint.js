@@ -19,7 +19,7 @@ class Endpoint {
   static createSession(queryParams = {}) {
     const method = 'post'
     const endpoint = '/session'
-    const url = `${apiBase}${endpoint}?${qs.stringify(queryParams)}`
+    const url = `${apiBase}${endpoint}${Object.keys(queryParams).length ? '?' + qs.stringify(queryParams) : ''}`
     return { method, url }
   }
 

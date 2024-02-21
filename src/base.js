@@ -60,27 +60,23 @@ class Base {
    * @return {Promise<Response>}
    * @see http://iq.bigtime.net/BigtimeData/api/v2/help/Session
    */
-  createSession(username, password, queryParams = {}) {
+  async createSession(username, password, queryParams = {}) {
     if (!username) throw new Error('Missing username configuration value.')
     if (!password) throw new Error('Missing password configuration value.')
-    const { method, url } = Endpoint.createSession(queryParams)
+    const { method, url } = await Endpoint.createSession(queryParams)
     const body = {
       UserId: username,
       Pwd: password
     }
-    return HttpRequest[method](url, body)
-      .then(
-        response => {
-          this.sessionToken = response.body.token
-          this.firm = response.body.firm
-          this.staffSid = response.body.staffsid
-          this.userId = response.body.userid
-          return response
-        },
-        () => {
-          throw new Error('Error creating session.')
-        }
-      )
+    const response = await HttpRequest[method](url, body).catch((error) => {
+      console.error('createSession', error);
+      return {};
+    });
+    this.sessionToken = response.token
+    this.firm = response.firm
+    this.staffSid = response.staffsid
+    this.userId = response.userid
+    return response;
   }
 
   /**

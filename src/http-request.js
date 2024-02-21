@@ -1,4 +1,3 @@
-const fetch = require('isomorphic-fetch')
 /**
  * The following is available from the `isomorphic-fetch` package,
  * which is just a reference to the class exposed by the `node-fetch`
@@ -10,7 +9,9 @@ const Request = global.Request
 // const Headers = global.Headers
 // const baseUrl = 'https://iq.bigtime.net/BigtimeData/api/v2'
 const defaultHeaders = {
-  'Content-Type': 'application/json'
+  'Content-Type': 'application/json',
+  'User-Agent': 'node-bigtime-sdk',
+  'Accept': 'application/json',
 }
 
 /**
@@ -90,16 +91,17 @@ class HttpRequest {
  * @param  {Object} headers
  * @return {Promise<Response>}
  */
-function request(url, method, body, headers) {
-  const request = new Request(url, {
+async function request(url, method, body, headers) {
+  let options = {
     method,
-    body: JSON.stringify(body),
-    headers: Object.assign({}, headers, defaultHeaders)
-    // headers: new Headers({})
-  })
-  return fetch(request)
-    .then(responseBodyAsJson)
-    .then(checkResponseStatus)
+    headers: Object.assign({}, headers, defaultHeaders),
+  };
+  if (body) options.body = JSON.stringify(body);
+  let res = await fetch(url, options);
+  await checkResponseStatus(res);
+  if (options.headers['Content-Type'] === 'application/json')
+    res = await res.json();
+  return res;
 }
 
 /**
@@ -122,14 +124,14 @@ function checkResponseStatus(response) {
  * @param  {Response} response
  * @return {Promise<Response>}
  */
-function responseBodyAsJson(response) {
-  return response.json()
-    .then(
-      json => {
-        response.body = json // TODO: Is this bad?
-        return response
-      }
-    )
+async function responseBodyAsJson(response) {
+  const json = await response.json().catch(async () => {
+    const text = await response.text().catch(e => e);
+    console.debug(text);
+    return response
+  })
+  response.body = json // TODO: Is this bad?
+  return response;
 }
 
 module.exports = HttpRequest
