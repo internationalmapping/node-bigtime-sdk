@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.12.1
+- Fixed repo paths from branching
+- Removed `isomorphic-fetch`  and re-generated npm lock file
+
+
 ## 0.12.0
 - Endpoints return JSON instead of raw response
 - TypeScript definitions
