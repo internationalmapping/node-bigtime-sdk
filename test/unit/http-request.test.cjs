@@ -48,7 +48,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             const actual = await HttpRequest.get(url, headers)
             expect(actual).to.be.an.instanceOf(Response)
             expect(actual.headers).to.be.an.instanceOf(Headers)
@@ -75,7 +75,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             try {
               await HttpRequest.get(url, headers)
             } catch (actual) {
@@ -110,7 +110,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             const actual = await HttpRequest.get(url)
             expect(actual).to.be.an.instanceOf(Response)
             expect(actual.headers).to.be.an.instanceOf(Headers)
@@ -137,7 +137,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             try {
               await HttpRequest.get(url)
             } catch (actual) {
@@ -197,7 +197,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             const body = {
               foo: 'bar'
             }
@@ -226,7 +226,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             const body = {
               foo: 'bar'
             }
@@ -263,7 +263,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             const actual = await HttpRequest.post(url)
             expect(actual).be.an.instanceOf(Response)
             expect(actual.headers).to.be.an.instanceOf(Headers)
@@ -289,7 +289,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             try {
               await HttpRequest.post(url)
             } catch (actual) {
@@ -322,7 +322,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             const body = {
               foo: 'bar'
             }
@@ -354,7 +354,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             const body = {
               foo: 'bar'
             }
@@ -394,7 +394,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             const body = null
             const actual = await HttpRequest.post(url, body)
             expect(actual).be.an.instanceOf(Response)
@@ -421,7 +421,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             const body = null
             try {
               await HttpRequest.post(url, body)
@@ -481,7 +481,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             const body = {
               foo: 'bar'
             }
@@ -510,7 +510,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             const body = {
               foo: 'bar'
             }
@@ -546,7 +546,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             const actual = await HttpRequest.put(url)
             expect(actual).be.an.instanceOf(Response)
             expect(actual.headers).to.be.an.instanceOf(Headers)
@@ -572,7 +572,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             try {
               await HttpRequest.put(url)
             } catch (actual) {
@@ -605,7 +605,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             const body = {
               foo: 'bar'
             }
@@ -637,7 +637,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             const body = {
               foo: 'bar'
             }
@@ -677,7 +677,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             const body = null
             const actual = await HttpRequest.put(url, body)
             expect(actual).be.an.instanceOf(Response)
@@ -704,7 +704,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             const body = null
             try {
               await HttpRequest.put(url, body)
@@ -765,7 +765,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             const body = {
               foo: 'bar'
             }
@@ -795,7 +795,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             const body = {
               foo: 'bar'
             }
@@ -832,7 +832,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             const actual = await HttpRequest.delete(url)
             expect(actual).be.an.instanceOf(Response)
             expect(actual.headers).to.be.an.instanceOf(Headers)
@@ -859,7 +859,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             try {
               await HttpRequest.delete(url)
             } catch (actual) {
@@ -893,7 +893,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             const body = {
               foo: 'bar'
             }
@@ -926,7 +926,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             const body = {
               foo: 'bar'
             }
@@ -967,7 +967,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             const body = null
             const actual = await HttpRequest.delete(url, body)
             expect(actual).be.an.instanceOf(Response)
@@ -995,7 +995,7 @@ describe('HttpRequest', () => {
           })
 
           it('returns a Response', async () => {
-            const url = 'https://google.com'
+            const url = 'https://google.com/'
             const body = null
             try {
               await HttpRequest.delete(url, body)

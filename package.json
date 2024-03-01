@@ -14,11 +14,11 @@
   "main": "./index.js",
   "types": "./types/index.d.ts",
   "scripts": {
-    "docs": "$(npm bin)/jsdoc ./src -r -d ./docs -t ./node_modules/docdash && echo 'Open ./docs/index.html in your browser'",
-    "lint": "$(npm bin)/eslint index.js ./src/**/*.js ./test/**/*.js",
+    "docs": "pnpm jsdoc ./src -r -d ./docs -t ./node_modules/docdash && echo 'Open ./docs/index.html in your browser'",
+    "lint": "pnpm eslint --fix index.js ./src/**/*.{js,cjs,mjs} ./test/**/*.{js,cjs,mjs}",
     "npm:lock": "sh scripts/npm-lock.sh",
     "precommit": "npm run lint && npm test",
-    "test": "npx nyc mocha --recursive --require ./test/helper.mjs && $(npm bin)/nyc report --reporter=lcov && echo 'Open ./coverage/lcov-report/index.html in your browser'",
+    "test": "pnpm nyc mocha --recursive --require ./test/helper.mjs && $(npm bin)/nyc report --reporter=lcov && echo 'Open ./coverage/lcov-report/index.html in your browser'",
     "test:coveralls": "cat ./coverage/lcov.info | $(npm bin)/coveralls"
   },
   "dependencies": {
@@ -36,7 +36,7 @@
     "mocha": "10.3.0",
     "mocha-lcov-reporter": "1.3.0",
     "nock": "13.5.3",
-    "nyc": "15.1.0",
+    "nyc": "^15.1.0",
     "sinon": "17.0.1"
   },
   "engines": {
@@ -46,6 +46,7 @@
   "publishConfig": {
     "access": "public"
   },
+  "packageManager": "pnpm@8.6.9",
   "authors": [
     "John Goldsmith <johngoldsm1@gmail.com>",
     "Mikael Ems <mems@internationalmapping.com>"

@@ -1,13 +1,4 @@
-/**
- * The following is available from the `isomorphic-fetch` package,
- * which is just a reference to the class exposed by the `node-fetch`
- * package.
- *
- * @see github.com/matthew-andrews/isomorphic-fetch/blob/master/fetch-npm-node.js
- */
-const Request = global.Request
-// const Headers = global.Headers
-// const baseUrl = 'https://iq.bigtime.net/BigtimeData/api/v2'
+
 const defaultHeaders = {
   'Content-Type': 'application/json',
   'User-Agent': 'node-bigtime-sdk',
